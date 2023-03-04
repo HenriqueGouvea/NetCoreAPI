@@ -9,7 +9,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddApplicationServices(builder.Configuration);
+builder.Services.AddSqliteContext(builder.Configuration);
+builder.Services.AddApplicationServices();
 
 var app = builder.Build();
 
@@ -18,6 +19,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.EnsureDatabaseSetup();
 }
 
 app.UseHttpsRedirection();
