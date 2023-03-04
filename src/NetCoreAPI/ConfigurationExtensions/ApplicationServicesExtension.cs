@@ -5,7 +5,7 @@ namespace NetCoreAPI.ConfigurationExtensions
 {
     internal static class ApplicationServicesExtension
     {
-        public static void AddApplicationServices(this IServiceCollection services, IConfiguration configuration)
+        public static void AddApplicationServices(this IServiceCollection services)
         {
             services.AddScoped<IProductService, ProductService>();
         }
