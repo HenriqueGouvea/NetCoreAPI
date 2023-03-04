@@ -51,4 +51,5 @@ The ShoppingCartController has endpoints to:
 - [ ] EntityFramework
 - [ ] Clean architecture
 - [ ] Logging
+- [ ] Centralized exceptions catching
 - [ ] GitHub Actions
