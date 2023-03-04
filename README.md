@@ -4,6 +4,7 @@ This is an example of an asynchronous .NET Core API based on a real scenario.
 
 ## Features
 - [ ] Authentication via JWT token
+- [ ] Register new user
 - [ ] CRUD operations
 - [ ] Reading with pagination
 - [ ] Integration tests
@@ -12,4 +13,4 @@ This is an example of an asynchronous .NET Core API based on a real scenario.
 - [ ] EntityFramework
 - [ ] Clean architecture
 - [ ] Logging
-- [ ] Docker
+- [ ] GitHub Actions
