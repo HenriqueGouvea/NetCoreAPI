@@ -1,4 +1,5 @@
-﻿using NetCoreAPI.Domain.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using NetCoreAPI.Domain.Models;
 using NetCoreAPI.Domain.Repositories;
 
 namespace NetCoreAPI.Repository.Repositories
@@ -31,10 +32,8 @@ namespace NetCoreAPI.Repository.Repositories
             throw new NotImplementedException();
         }
 
-        public async Task<Product> GetByIdAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<Product?> GetByIdAsync(int id) 
+            => await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
 
         public async Task UpdateAsync(Product product)
         {

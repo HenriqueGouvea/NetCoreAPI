@@ -14,7 +14,7 @@ namespace NetCoreAPI.Applicaiton.Services
             _productRepository = productRepository;
         }
 
-        public async Task<ProductResponse> AddAsync(ProductRequest productRequest)
+        public async Task<ProductResponse?> AddAsync(ProductRequest productRequest)
         {
             var product = await _productRepository.AddAsync(productRequest.ToProduct());
             return product.ToProductResponse();
@@ -30,9 +30,10 @@ namespace NetCoreAPI.Applicaiton.Services
             throw new NotImplementedException();
         }
 
-        public async Task<ProductResponse> GetByIdAsync(int id)
+        public async Task<ProductResponse?> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var result = await _productRepository.GetByIdAsync(id);
+            return result?.ToProductResponse();
         }
 
         public async Task UpdateAsync(ProductRequest productRequest)

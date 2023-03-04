@@ -10,7 +10,7 @@ namespace NetCoreAPI.Domain.Repositories
 
         Task<Product> GetAllAsync(int? pageNumber = null, int? pageSize = null);
 
-        Task<Product> GetByIdAsync(int id);
+        Task<Product?> GetByIdAsync(int id);
 
         Task UpdateAsync(Product product);
 

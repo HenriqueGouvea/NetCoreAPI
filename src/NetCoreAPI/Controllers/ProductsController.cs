@@ -23,14 +23,7 @@ namespace NetCoreAPI.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> GetById([Range(1, int.MaxValue)] int id)
         {
-            var product = new ProductResponse
-            {
-                Id = id,
-                Name = "Test",
-                Price = 100,
-                StockQuantity = 100,
-                SequenceNumber = 1,
-            };
+            var product = await _productService.GetByIdAsync(id);
 
             return Ok(product);
         }

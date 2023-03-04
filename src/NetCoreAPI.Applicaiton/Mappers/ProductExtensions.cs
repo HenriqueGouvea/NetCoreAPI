@@ -1,5 +1,6 @@
 ﻿using NetCoreAPI.Domain.Models;
 using NetCoreAPI.Dto.Product;
+using System.Reflection.Metadata.Ecma335;
 
 namespace NetCoreAPI.Applicaiton.Mappers
 {
@@ -16,8 +17,10 @@ namespace NetCoreAPI.Applicaiton.Mappers
             };
         }
 
-        public static ProductResponse ToProductResponse(this Product product)
+        public static ProductResponse? ToProductResponse(this Product product)
         {
+            if (product == null) return null;
+
             return new ProductResponse
             {
                 Id = product.Id,
