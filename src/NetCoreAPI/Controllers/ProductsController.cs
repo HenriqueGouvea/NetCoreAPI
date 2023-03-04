@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NetCoreAPI.Dto;
+using System.ComponentModel.DataAnnotations;
 
 namespace NetCoreAPI.Controllers
 {
@@ -17,11 +18,11 @@ namespace NetCoreAPI.Controllers
         [AllowAnonymous]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<IActionResult> GetById([Range(1, int.MaxValue)]int id)
         {
-            if (id <=0)
+            if (!ModelState.IsValid)
             {
-                return BadRequest("Invalid id");
+                return BadRequest(ModelState);
             }
 
             var product = new ProductResponse
