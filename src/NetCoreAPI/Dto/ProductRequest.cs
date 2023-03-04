@@ -2,7 +2,7 @@
 
 namespace NetCoreAPI.Dto
 {
-    public class AddProductRequest
+    public class ProductRequest
     {
         [Required]
         [MinLength(3)]
