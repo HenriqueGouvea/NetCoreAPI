@@ -3,34 +3,40 @@ using NetCoreAPI.Domain.Repositories;
 
 namespace NetCoreAPI.Repository.Repositories
 {
-    public class ProductRepository : IProductRepository
+    public class ProductRepository : BaseRepository, IProductRepository
     {
-        public Task<Product> AddAsync(Product product)
+        public ProductRepository(NetCoreAPIContext context) : base (context)
+        {
+        }
+
+        public async Task<Product> AddAsync(Product product)
+        {
+            await _context.Products.AddAsync(product);
+            await SaveChangesAsync();
+            return product;
+        }
+
+        public async Task CommitAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Task CommitAsync()
+        public async Task DeleteAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task DeleteAsync(int id)
+        public async Task<Product> GetAllAsync(int? pageNumber = null, int? pageSize = null)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Product> GetAllAsync(int? pageNumber = null, int? pageSize = null)
+        public async Task<Product> GetByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Product> GetByIdAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task UpdateAsync(Product product)
+        public async Task UpdateAsync(Product product)
         {
             throw new NotImplementedException();
         }

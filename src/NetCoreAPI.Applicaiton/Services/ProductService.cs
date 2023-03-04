@@ -1,13 +1,23 @@
 ﻿using NetCoreAPI.Applicaiton.Interfaces;
+using NetCoreAPI.Applicaiton.Mappers;
+using NetCoreAPI.Domain.Repositories;
 using NetCoreAPI.Dto.Product;
 
 namespace NetCoreAPI.Applicaiton.Services
 {
     public class ProductService : IProductService
     {
+        private readonly IProductRepository _productRepository;
+
+        public ProductService(IProductRepository productRepository)
+        {
+            _productRepository = productRepository;
+        }
+
         public async Task<ProductResponse> AddAsync(ProductRequest productRequest)
         {
-            throw new NotImplementedException();
+            var product = await _productRepository.AddAsync(productRequest.ToProduct());
+            return product.ToProductResponse();
         }
 
         public async Task DeleteAsync(int id)

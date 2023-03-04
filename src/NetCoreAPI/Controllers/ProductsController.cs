@@ -23,11 +23,6 @@ namespace NetCoreAPI.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> GetById([Range(1, int.MaxValue)] int id)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             var product = new ProductResponse
             {
                 Id = id,
@@ -48,11 +43,6 @@ namespace NetCoreAPI.Controllers
             [FromQuery][Range(1, int.MaxValue)] int? pageNumber,
             [FromQuery][Range(1, int.MaxValue)] int? pageSize)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             var products = new List<ProductResponse>
             {
                 new ProductResponse{
@@ -80,19 +70,7 @@ namespace NetCoreAPI.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Post(ProductRequest productRequest)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var product = new ProductResponse
-            {
-                Id = 1,
-                Name = productRequest.Name,
-                Price = productRequest.Price,
-                StockQuantity = productRequest.StockQuantity,
-                SequenceNumber = productRequest.SequenceNumber,
-            };
+            var product = await _productService.AddAsync(productRequest);
 
             return Ok(product);
         }
@@ -100,11 +78,6 @@ namespace NetCoreAPI.Controllers
         [HttpPut]
         public async Task<IActionResult> Put(UpdateProductRequest productRequest)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             // Pass the request object to the service layer, get the domain object and map it updating its values.
 
             return NoContent();
@@ -113,11 +86,6 @@ namespace NetCoreAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete([Range(1, int.MaxValue)] int id)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             // check if product exists, if not, return 404
 
             return NoContent();
