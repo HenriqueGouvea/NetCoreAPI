@@ -4,14 +4,14 @@ namespace NetCoreAPI.Applicaiton.Interfaces
 {
     public interface IProductService
     {
-        ProductResponse GetById(int id);
+        Task<ProductResponse> GetByIdAsync(int id);
 
-        ProductsResponse GetAll(int? pageNumber = null, int? pageSize = null);
+        Task<ProductsResponse> GetAllAsync(int? pageNumber = null, int? pageSize = null);
 
-        ProductResponse Add(ProductRequest productRequest);
+        Task<ProductResponse> AddAsync(ProductRequest productRequest);
 
-        void Update(ProductRequest productRequest);
+        Task UpdateAsync(ProductRequest productRequest);
 
-        void Delete(int id);
+        Task DeleteAsync(int id);
     }
 }

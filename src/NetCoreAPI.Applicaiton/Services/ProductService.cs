@@ -5,27 +5,27 @@ namespace NetCoreAPI.Applicaiton.Services
 {
     public class ProductService : IProductService
     {
-        public ProductResponse Add(ProductRequest productRequest)
+        public async Task<ProductResponse> AddAsync(ProductRequest productRequest)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(int id)
+        public async Task DeleteAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public ProductsResponse GetAll(int? pageNumber = null, int? pageSize = null)
+        public async Task<ProductsResponse> GetAllAsync(int? pageNumber = null, int? pageSize = null)
         {
             throw new NotImplementedException();
         }
 
-        public ProductResponse GetById(int id)
+        public async Task<ProductResponse> GetByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(ProductRequest productRequest)
+        public async Task UpdateAsync(ProductRequest productRequest)
         {
             throw new NotImplementedException();
         }
