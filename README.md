@@ -16,7 +16,7 @@ Contains the following properties:
 - [ ] Authentication via JWT token
 - [ ] Register new user
 - [ ] CRUD operations
-- [ ] Use ValidationProblem and ModelState for validations
+- [ ] Use ModelState for validations
 - [ ] Reading with pagination
 - [ ] Integration tests
 - [ ] Unit tests
