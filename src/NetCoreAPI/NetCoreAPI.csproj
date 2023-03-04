@@ -11,8 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\NetCoreAPI.Applicaiton\NetCoreAPI.Applicaiton.csproj" />
-    <ProjectReference Include="..\..\NetCoreAPI.Dto\NetCoreAPI.Dto.csproj" />
+    <ProjectReference Include="..\NetCoreAPI.Applicaiton\NetCoreAPI.Applicaiton.csproj" />
+    <ProjectReference Include="..\NetCoreAPI.Dto\NetCoreAPI.Dto.csproj" />
   </ItemGroup>
 
 </Project>
