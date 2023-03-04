@@ -9,9 +9,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - API", "0 - API", "{9B8F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{DFD18CCD-DB48-48AE-8837-DBDADAA73D67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreAPI.Applicaiton", "src\NetCoreAPI.Applicaiton\NetCoreAPI.Applicaiton.csproj", "{030123D5-D82C-4C20-B9FB-3F58CF46B75B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreAPI.Applicaiton", "src\NetCoreAPI.Applicaiton\NetCoreAPI.Applicaiton.csproj", "{030123D5-D82C-4C20-B9FB-3F58CF46B75B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreAPI.Dto", "src\NetCoreAPI.Dto\NetCoreAPI.Dto.csproj", "{37F75695-CDDA-42BE-93AD-E7FAF713DD14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreAPI.Dto", "src\NetCoreAPI.Dto\NetCoreAPI.Dto.csproj", "{37F75695-CDDA-42BE-93AD-E7FAF713DD14}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Domain", "2 - Domain", "{9921D991-850B-4E65-917F-B5E337AD58FA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreAPI.Domain", "src\NetCoreAPI.Domain\NetCoreAPI.Domain.csproj", "{E052582E-DC80-4CEA-8794-ADB6BE0581DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +35,10 @@ Global
 		{37F75695-CDDA-42BE-93AD-E7FAF713DD14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37F75695-CDDA-42BE-93AD-E7FAF713DD14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37F75695-CDDA-42BE-93AD-E7FAF713DD14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E052582E-DC80-4CEA-8794-ADB6BE0581DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E052582E-DC80-4CEA-8794-ADB6BE0581DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E052582E-DC80-4CEA-8794-ADB6BE0581DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E052582E-DC80-4CEA-8794-ADB6BE0581DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +47,7 @@ Global
 		{AB3C1EC7-0780-4A87-BD1C-B7ECB9CB0BE5} = {9B8F1679-5869-47CC-BB5D-2C5176D0024C}
 		{030123D5-D82C-4C20-B9FB-3F58CF46B75B} = {DFD18CCD-DB48-48AE-8837-DBDADAA73D67}
 		{37F75695-CDDA-42BE-93AD-E7FAF713DD14} = {9B8F1679-5869-47CC-BB5D-2C5176D0024C}
+		{E052582E-DC80-4CEA-8794-ADB6BE0581DC} = {9921D991-850B-4E65-917F-B5E337AD58FA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EADDC043-66BF-480E-BCF4-A130C064028F}
