@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using NetCoreAPI.Dto;
+using NetCoreAPI.Applicaiton.Interfaces;
+using NetCoreAPI.Dto.Product;
 using System.ComponentModel.DataAnnotations;
 
 namespace NetCoreAPI.Controllers
@@ -9,9 +10,11 @@ namespace NetCoreAPI.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        public ProductsController()
-        {
+        private readonly IProductService _productService;
 
+        public ProductsController(IProductService productService)
+        {
+            _productService = productService;
         }
 
         [HttpGet("{id}")]

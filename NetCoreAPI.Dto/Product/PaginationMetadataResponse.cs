@@ -1,4 +1,4 @@
-﻿namespace NetCoreAPI.Dto
+﻿namespace NetCoreAPI.Dto.Product
 {
     public class PaginationMetadataResponse
     {

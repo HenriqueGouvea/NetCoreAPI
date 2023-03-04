@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace NetCoreAPI.Dto
+namespace NetCoreAPI.Dto.Product
 {
     public class ProductRequest
     {

@@ -7,6 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreAPI", "src\NetCoreAP
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - API", "0 - API", "{9B8F1679-5869-47CC-BB5D-2C5176D0024C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{DFD18CCD-DB48-48AE-8837-DBDADAA73D67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreAPI.Applicaiton", "NetCoreAPI.Applicaiton\NetCoreAPI.Applicaiton.csproj", "{030123D5-D82C-4C20-B9FB-3F58CF46B75B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreAPI.Dto", "NetCoreAPI.Dto\NetCoreAPI.Dto.csproj", "{37F75695-CDDA-42BE-93AD-E7FAF713DD14}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +23,22 @@ Global
 		{AB3C1EC7-0780-4A87-BD1C-B7ECB9CB0BE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB3C1EC7-0780-4A87-BD1C-B7ECB9CB0BE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB3C1EC7-0780-4A87-BD1C-B7ECB9CB0BE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{030123D5-D82C-4C20-B9FB-3F58CF46B75B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{030123D5-D82C-4C20-B9FB-3F58CF46B75B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{030123D5-D82C-4C20-B9FB-3F58CF46B75B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{030123D5-D82C-4C20-B9FB-3F58CF46B75B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37F75695-CDDA-42BE-93AD-E7FAF713DD14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37F75695-CDDA-42BE-93AD-E7FAF713DD14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37F75695-CDDA-42BE-93AD-E7FAF713DD14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37F75695-CDDA-42BE-93AD-E7FAF713DD14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{AB3C1EC7-0780-4A87-BD1C-B7ECB9CB0BE5} = {9B8F1679-5869-47CC-BB5D-2C5176D0024C}
+		{030123D5-D82C-4C20-B9FB-3F58CF46B75B} = {DFD18CCD-DB48-48AE-8837-DBDADAA73D67}
+		{37F75695-CDDA-42BE-93AD-E7FAF713DD14} = {9B8F1679-5869-47CC-BB5D-2C5176D0024C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EADDC043-66BF-480E-BCF4-A130C064028F}
