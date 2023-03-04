@@ -1,4 +1,4 @@
-# .NET Core 6 API 
+# API with .NET Core 6
 
 This is an example of an asynchronous .NET Core API that handles e-commerce products and the shopping carts of customers.
 
