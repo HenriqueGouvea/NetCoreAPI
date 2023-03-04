@@ -36,5 +36,28 @@ namespace NetCoreAPI.Controllers
 
             return Ok(product);
         }
+
+        [HttpPost()]
+        [AllowAnonymous]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> Post(AddProductRequest productRequest)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var product = new ProductResponse
+            {
+                Id = 1,
+                Name = productRequest.Name,
+                Price = productRequest.Price,
+                StockQuantity = productRequest.StockQuantity,
+                SequenceNumber = productRequest.SequenceNumber,
+            };
+
+            return Ok(product);
+        }
     }
 }
