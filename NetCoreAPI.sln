@@ -19,7 +19,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreAPI.Domain", "src\Ne
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Data", "3 - Data", "{D9A87567-086F-42E5-ADB1-0B985917C0BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreAPI.Repository", "src\NetCoreAPI.Repository\NetCoreAPI.Repository.csproj", "{6E7D6B18-7326-4303-A855-9E74D9DBF12F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreAPI.Repository", "src\NetCoreAPI.Repository\NetCoreAPI.Repository.csproj", "{6E7D6B18-7326-4303-A855-9E74D9DBF12F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{110E9018-252C-4460-B778-5ECB0874AD4D}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
