@@ -38,18 +38,18 @@ The ShoppingCartController has endpoints to:
 
 ## Features
 - [x] Swagger
+- [x] Use ModelState for validations
+- [x] Reading products with pagination
+- [x] SQLite database
+- [x] EntityFramework
+- [x] Clean architecture
 - [ ] Authentication via JWT token
 - [ ] Register new user
 - [ ] CRUD operations for Products
 - [ ] CRUD operations for Order
-- [ ] Use ModelState for validations
-- [ ] Reading products with pagination
 - [ ] Add user role (only admins are able to modify products)
 - [ ] Integration tests
 - [ ] Unit tests
-- [ ] SQLite database
-- [ ] EntityFramework
-- [ ] Clean architecture
 - [ ] Logging
 - [ ] Centralized exceptions catching
 - [ ] GitHub Actions
