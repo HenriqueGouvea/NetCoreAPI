@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NetCoreAPI.Domain.Models;
 using NetCoreAPI.Domain.Repositories;
+using System.Linq;
 
 namespace NetCoreAPI.Repository.Repositories
 {
@@ -27,9 +28,22 @@ namespace NetCoreAPI.Repository.Repositories
             throw new NotImplementedException();
         }
 
-        public async Task<Product> GetAllAsync(int? pageNumber = null, int? pageSize = null)
+        public async Task<KeyValuePair<int, List<Product>>> GetAllAsync(int pageNumber, int pageSize)
         {
-            throw new NotImplementedException();
+            var recordsToSkip = (pageNumber - 1) * pageSize;
+            var query = _context.Products.Skip(recordsToSkip).Take(pageSize);
+
+            var totalTask = _context.Products.CountAsync();
+            var resultTask = query.ToListAsync();
+
+            await Task.WhenAll(totalTask, resultTask);
+
+            return new KeyValuePair<int, List<Product>>(totalTask.Result, resultTask.Result);
+        }
+
+        public async Task<List<Product>> GetAllAsync()
+        {
+            return await _context.Products.ToListAsync();
         }
 
         public async Task<Product?> GetByIdAsync(int id) 

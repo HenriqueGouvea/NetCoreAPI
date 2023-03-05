@@ -8,7 +8,9 @@ namespace NetCoreAPI.Domain.Repositories
 
         Task DeleteAsync(int id);
 
-        Task<Product> GetAllAsync(int? pageNumber = null, int? pageSize = null);
+        Task<List<Product>> GetAllAsync();
+
+        Task<KeyValuePair<int, List<Product>>> GetAllAsync(int pageNumber, int pageSize);
 
         Task<Product?> GetByIdAsync(int id);
 

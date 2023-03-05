@@ -36,25 +36,19 @@ namespace NetCoreAPI.Controllers
             [FromQuery][Range(1, int.MaxValue)] int? pageNumber,
             [FromQuery][Range(1, int.MaxValue)] int? pageSize)
         {
-            var products = new List<ProductResponse>
-            {
-                new ProductResponse{
-                    Id = 1,
-                    Name = "Test 1",
-                    Price = 100,
-                    StockQuantity = 100,
-                    SequenceNumber = 1
-                },
-                new ProductResponse{
-                    Id = 2,
-                    Name = "Test 2",
-                    Price = 100,
-                    StockQuantity = 100,
-                    SequenceNumber = 2
-                }
-            };
+            ProductsResponse result;
 
-            return Ok(products);
+            if (pageNumber.HasValue && pageSize.HasValue)
+            { 
+                result = await _productService.GetAllAsync(pageNumber.Value, pageSize.Value);
+
+                // insert link to product details in each item?
+
+                return Ok(result);
+            }
+
+            result = await _productService.GetAllAsync();
+            return Ok(result);
         }
 
         [HttpPost]

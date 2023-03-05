@@ -2,10 +2,20 @@
 {
     public class PaginationMetadataResponse
     {
-        public int Page { get; set; }
+        public PaginationMetadataResponse(int currentPage, int itemsOnCurrentPage, int totalItems, int totalPages)
+        {
+            CurrentPage = currentPage;
+            ItemsOnCurrentPage = itemsOnCurrentPage;
+            TotalItems = totalItems;
+            TotalPages = totalPages;
+        }
 
-        public int TotalOnCurrentPage { get; set; }
+        public int CurrentPage { get; set; }
 
-        public int Total { get; set; }
+        public int ItemsOnCurrentPage { get; set; }
+
+        public int TotalItems { get; set; }
+
+        public int TotalPages { get; set; }
     }
 }

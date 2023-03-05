@@ -1,4 +1,5 @@
-﻿using NetCoreAPI.Dto.Product;
+﻿using NetCoreAPI.Domain.Models;
+using NetCoreAPI.Dto.Product;
 
 namespace NetCoreAPI.Applicaiton.Interfaces
 {
@@ -6,7 +7,9 @@ namespace NetCoreAPI.Applicaiton.Interfaces
     {
         Task<ProductResponse?> GetByIdAsync(int id);
 
-        Task<ProductsResponse> GetAllAsync(int? pageNumber = null, int? pageSize = null);
+        Task<ProductsResponse> GetAllAsync(int pageNumber, int pageSize);
+
+        Task<ProductsResponse> GetAllAsync();
 
         Task<ProductResponse?> AddAsync(ProductRequest productRequest);
 
