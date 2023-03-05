@@ -13,7 +13,7 @@ namespace NetCoreAPI.Applicaiton.Interfaces
 
         Task<ProductResponse?> AddAsync(ProductRequest productRequest);
 
-        Task UpdateAsync(ProductRequest productRequest);
+        Task<bool> UpdateAsync(UpdateProductRequest productRequest);
 
         Task DeleteAsync(int id);
     }

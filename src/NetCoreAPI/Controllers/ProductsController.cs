@@ -70,7 +70,10 @@ namespace NetCoreAPI.Controllers
         [HttpPut(Name = "UpdateProduct")]
         public async Task<IActionResult> Put(UpdateProductRequest productRequest)
         {
-            // Pass the request object to the service layer, get the domain object and map it updating its values.
+            var success = await _productService.UpdateAsync(productRequest);
+
+            if (!success)
+                return BadRequest($"None product found with the ID {productRequest.Id}");
 
             return NoContent();
         }

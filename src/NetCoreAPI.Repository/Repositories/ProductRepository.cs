@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NetCoreAPI.Domain.Models;
 using NetCoreAPI.Domain.Repositories;
-using System.Linq;
 
 namespace NetCoreAPI.Repository.Repositories
 {
@@ -51,7 +50,8 @@ namespace NetCoreAPI.Repository.Repositories
 
         public async Task UpdateAsync(Product product)
         {
-            throw new NotImplementedException();
+            await Task.Run(() => _context.Products.Update(product));
+            await SaveChangesAsync();
         }
     }
 }

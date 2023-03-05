@@ -58,9 +58,24 @@ namespace NetCoreAPI.Applicaiton.Services
             return result?.ToProductResponse();
         }
 
-        public async Task UpdateAsync(ProductRequest productRequest)
+        public async Task<bool> UpdateAsync(UpdateProductRequest productRequest)
         {
-            throw new NotImplementedException();
+            var product = await _productRepository.GetByIdAsync(productRequest.Id);
+
+            if (product == null) 
+            {
+                // TODO: Log something here
+                return false;
+            }
+
+            product.Name = productRequest.Name;
+            product.SequenceNumber = productRequest.SequenceNumber;
+            product.Price = productRequest.Price;
+            product.StockQuantity = productRequest.StockQuantity;
+
+            await _productRepository.UpdateAsync(product);
+
+            return true;
         }
     }
 }
