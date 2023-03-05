@@ -43,9 +43,9 @@ The ShoppingCartController has endpoints to:
 - [x] SQLite database
 - [x] EntityFramework
 - [x] Clean architecture
+- [x] CRUD operations for Products
 - [ ] Authentication via JWT token
 - [ ] Register new user
-- [ ] CRUD operations for Products
 - [ ] CRUD operations for Order
 - [ ] Add user role (only admins are able to modify products)
 - [ ] Integration tests

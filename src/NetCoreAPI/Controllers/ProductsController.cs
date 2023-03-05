@@ -81,9 +81,12 @@ namespace NetCoreAPI.Controllers
         [HttpDelete("{id}", Name = "DeleteProduct")]
         public async Task<IActionResult> Delete([Range(1, int.MaxValue)] int id)
         {
-            // check if product exists, if not, return 404
+            var success = await _productService.DeleteAsync(id);
 
-            return NoContent();
+            if (!success)
+                return BadRequest($"None product found with the ID {id}");
+
+            return Accepted();
         }
     }
 }

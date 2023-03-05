@@ -7,7 +7,7 @@ namespace NetCoreAPI.Dto.Product
         [Required]
         [MinLength(3)]
         [StringLength(50)]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         [Required]
         [Range(0.1, 999999.99)]

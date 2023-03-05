@@ -15,7 +15,5 @@ namespace NetCoreAPI.Domain.Repositories
         Task<Product?> GetByIdAsync(int id);
 
         Task UpdateAsync(Product product);
-
-        Task CommitAsync();
     }
 }

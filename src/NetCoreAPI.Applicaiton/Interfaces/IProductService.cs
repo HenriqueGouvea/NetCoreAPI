@@ -15,6 +15,6 @@ namespace NetCoreAPI.Applicaiton.Interfaces
 
         Task<bool> UpdateAsync(UpdateProductRequest productRequest);
 
-        Task DeleteAsync(int id);
+        Task<bool> DeleteAsync(int id);
     }
 }

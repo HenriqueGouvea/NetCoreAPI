@@ -3,6 +3,7 @@ using NetCoreAPI.Applicaiton.Mappers;
 using NetCoreAPI.Domain.Models;
 using NetCoreAPI.Domain.Repositories;
 using NetCoreAPI.Dto.Product;
+using System.Reflection.Metadata.Ecma335;
 
 namespace NetCoreAPI.Applicaiton.Services
 {
@@ -21,9 +22,18 @@ namespace NetCoreAPI.Applicaiton.Services
             return product.ToProductResponse();
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            var product = _productRepository.GetByIdAsync(id);
+
+            if (product == null)
+            {
+                // TODO: Log a bad request/invalid arguments here
+                return false;
+            }
+
+            await _productRepository.DeleteAsync(id);
+            return true;
         }
 
         public async Task<ProductsResponse> GetAllAsync(int pageNumber, int pageSize)
@@ -62,9 +72,9 @@ namespace NetCoreAPI.Applicaiton.Services
         {
             var product = await _productRepository.GetByIdAsync(productRequest.Id);
 
-            if (product == null) 
+            if (product == null || string.IsNullOrEmpty(productRequest.Name)) 
             {
-                // TODO: Log something here
+                // TODO: Log a bad request/invalid arguments here
                 return false;
             }
 

@@ -17,14 +17,15 @@ namespace NetCoreAPI.Repository.Repositories
             return product;
         }
 
-        public async Task CommitAsync()
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            var product = await GetByIdAsync(id);
+
+            if (product != null)
+            {
+                await Task.Run(() => _context.Products.Remove(product));
+                await SaveChangesAsync();
+            }
         }
 
         public async Task<KeyValuePair<int, List<Product>>> GetAllAsync(int pageNumber, int pageSize)
