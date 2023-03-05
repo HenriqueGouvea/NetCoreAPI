@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using NetCoreAPI.Applicaiton.Interfaces;
 using NetCoreAPI.Dto.Product;
+using NetCoreAPI.Extensions;
 using System.ComponentModel.DataAnnotations;
 
 namespace NetCoreAPI.Controllers
@@ -11,13 +12,16 @@ namespace NetCoreAPI.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly IProductService _productService;
+        private readonly IUrlHelper _urlHelper;
 
-        public ProductsController(IProductService productService)
+        public ProductsController(
+            IProductService productService, IUrlHelper urlHelper)
         {
             _productService = productService;
+            _urlHelper = urlHelper;
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetProductById")]
         [AllowAnonymous]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -41,8 +45,7 @@ namespace NetCoreAPI.Controllers
             if (pageNumber.HasValue && pageSize.HasValue)
             { 
                 result = await _productService.GetAllAsync(pageNumber.Value, pageSize.Value);
-
-                // insert link to product details in each item?
+                await result.Products.SetLinksAsync(_urlHelper);
 
                 return Ok(result);
             }
@@ -62,7 +65,7 @@ namespace NetCoreAPI.Controllers
             return Ok(product);
         }
 
-        [HttpPut]
+        [HttpPut(Name = "UpdateProduct")]
         public async Task<IActionResult> Put(UpdateProductRequest productRequest)
         {
             // Pass the request object to the service layer, get the domain object and map it updating its values.
@@ -70,7 +73,7 @@ namespace NetCoreAPI.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}", Name = "DeleteProduct")]
         public async Task<IActionResult> Delete([Range(1, int.MaxValue)] int id)
         {
             // check if product exists, if not, return 404

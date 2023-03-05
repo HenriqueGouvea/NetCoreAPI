@@ -2,6 +2,11 @@
 {
     public class ProductItemResponse : ProductResponse
     {
-        public string Link { get; set; }
+        public ProductItemResponse()
+        {
+            Links = new List<LinkResponse>();
+        }
+
+        public List<LinkResponse> Links { get; set; }
     }
 }
