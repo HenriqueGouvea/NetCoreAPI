@@ -45,12 +45,14 @@ namespace NetCoreAPI.Controllers
             if (pageNumber.HasValue && pageSize.HasValue)
             { 
                 result = await _productService.GetAllAsync(pageNumber.Value, pageSize.Value);
-                await result.Products.SetLinksAsync(_urlHelper);
-
-                return Ok(result);
+            }
+            else
+            {
+                result = await _productService.GetAllAsync();
             }
 
-            result = await _productService.GetAllAsync();
+            await result.Products.SetLinksAsync(_urlHelper);
+
             return Ok(result);
         }
 
